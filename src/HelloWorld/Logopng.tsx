@@ -1,0 +1,87 @@
+import {
+  AbsoluteFill,
+  interpolate,
+  spring,
+  useCurrentFrame,
+  useVideoConfig,
+  Img
+} from "remotion"
+import { Arc } from "./Arc"
+import { Atom } from "./Atom"
+import { z } from "zod"
+import logotext from "./logotext.png"
+import { zColor } from "@remotion/zod-types"
+
+export const myCompSchema3 = z.object({
+  logoColor1: zColor(),
+  logoColor2: zColor(),
+})
+
+export const Logopng: React.FC<z.infer<typeof myCompSchema3>> = ({
+  logoColor1: color1,
+  logoColor2: color2,
+}) => {
+  const videoConfig = useVideoConfig()
+  const frame = useCurrentFrame()
+
+  const development = spring({
+    config: {
+      damping: 100,
+      mass: 0.5,
+    },
+    fps: videoConfig.fps,
+    frame,
+  })
+
+  const rotationDevelopment = spring({
+    config: {
+      damping: 100,
+      mass: 0.5,
+    },
+    fps: videoConfig.fps,
+    frame,
+  })
+
+  const scale = spring({
+    frame,
+    config: {
+      mass: 0.5,
+    },
+    fps: videoConfig.fps,
+  })
+
+  const logoRotation = interpolate(
+    frame,
+    [0, videoConfig.durationInFrames],
+    [0, 360],
+  )
+
+  return (
+    <AbsoluteFill
+    >
+      <Img src={ logotext } style={ { width: 850, alignContent: 'center', alignSelf: "center", paddingTop: "10%" } } />
+      {/* <Arc
+        rotateProgress={rotationDevelopment}
+        progress={development}
+        rotation={30}
+        color1={color1}
+        color2={color2}
+      />
+      <Arc
+        rotateProgress={rotationDevelopment}
+        rotation={90}
+        progress={development}
+        color1={color1}
+        color2={color2}
+      />
+      <Arc
+        rotateProgress={rotationDevelopment}
+        rotation={-30}
+        progress={development}
+        color1={color1}
+        color2={color2}
+      /> */}
+      {/* <Atom scale={ rotationDevelopment } color1={ color1 } color2={ color2 } /> */ }
+    </AbsoluteFill>
+  )
+}
