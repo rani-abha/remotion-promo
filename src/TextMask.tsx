@@ -17,6 +17,7 @@ import { clockWipe } from './presentations/clock-wipe'
 export const TextMask: React.FC = () => {
   const frame = useCurrentFrame()
   const { fps, width, height } = useVideoConfig()
+  console.log("text mask")
 
   const scale =
     spring({
@@ -30,18 +31,19 @@ export const TextMask: React.FC = () => {
     }) *
     0.9 +
     interpolate(frame, [0, 100], [0, 0.1])
-
+  // AT YOUR CONVENIENCE
   return (
     <AbsoluteFill
       style={ {
-        WebkitMaskImage: `url(${staticFile('NaBlack.png')})`,
+        WebkitMaskImage: `url(${staticFile('e.png')})`,
         WebkitMaskRepeat: 'no-repeat',
         WebkitMaskPosition: 'center',
+        WebkitMaskSize: 'contain',
         scale: String(scale),
       } }
     >
       <TransitionSeries>
-        <TransitionSeries.Sequence durationInFrames={ 37 }>
+        <TransitionSeries.Sequence durationInFrames={ 27 }>
           <AbsoluteFill
             style={ {
               backgroundColor: GREEN,
@@ -52,7 +54,7 @@ export const TextMask: React.FC = () => {
           timing={ springTiming({ config: { damping: 200 }, durationInFrames: 20 }) }
           presentation={ slide() }
         />
-        <TransitionSeries.Sequence durationInFrames={ 30 }>
+        <TransitionSeries.Sequence durationInFrames={ 20 }>
           <AbsoluteFill
             style={ {
               backgroundColor: BLUE,
@@ -63,7 +65,7 @@ export const TextMask: React.FC = () => {
           timing={ springTiming({ config: { damping: 200 }, durationInFrames: 20 }) }
           presentation={ slide({ direction: 'from-top' }) }
         />
-        <TransitionSeries.Sequence durationInFrames={ 27 }>
+        <TransitionSeries.Sequence durationInFrames={ 25 }>
           <AbsoluteFill
             style={ {
               backgroundColor: PINK,
@@ -122,7 +124,7 @@ export const TextMask: React.FC = () => {
         <TransitionSeries.Sequence durationInFrames={ 30 }>
           <AbsoluteFill
             style={ {
-              backgroundColor: ORANGE,
+              backgroundColor: PINK,
             } }
           />
         </TransitionSeries.Sequence>
@@ -134,7 +136,7 @@ export const TextMask: React.FC = () => {
         <TransitionSeries.Sequence durationInFrames={ 105 }>
           <AbsoluteFill
             style={ {
-              backgroundColor: PINK,
+              backgroundColor: ORANGE,
             } }
           />
         </TransitionSeries.Sequence>

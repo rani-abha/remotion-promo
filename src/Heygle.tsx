@@ -10,6 +10,7 @@ import {
 import { Logopng } from './HelloWorld/Logopng'
 
 export const Heygle: React.FC = () => {
+  console.log("heygle")
   const frame = useCurrentFrame()
   const { fps, width, height } = useVideoConfig()
   console.log("Heygle")

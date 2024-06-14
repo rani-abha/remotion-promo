@@ -1,7 +1,7 @@
 import { AbsoluteFill } from 'remotion'
 import React from 'react'
 import { fontFamily } from './font'
-import { ORANGE } from './colors'
+import { BLUE } from './colors'
 
 export const BlueNa: React.FC = () => {
   console.log("blue na")
@@ -13,12 +13,12 @@ export const BlueNa: React.FC = () => {
         fontFamily,
         fontSize: 300,
         color: 'white',
-        backgroundColor: ORANGE,
+        backgroundColor: BLUE,
         fontWeight: 'bolder',
         fontVariationSettings: `"wght" 900, "wdth" 125`,
       } }
     >
-      BUY
+      SHOP
     </AbsoluteFill>
   )
 }

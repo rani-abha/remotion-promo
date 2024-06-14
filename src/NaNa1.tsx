@@ -19,7 +19,8 @@ export const NaNa1: React.FC<NaNa1Props> = ({ title }) => {
         justifyContent: 'center',
         alignItems: 'center',
         fontFamily,
-        fontSize: 250,
+        paddingLeft: '7%',
+        fontSize: 160,
         color: 'white',
         backgroundColor: ORANGE,
         fontWeight: 'bolder',
@@ -33,15 +34,17 @@ export const NaNa1: React.FC<NaNa1Props> = ({ title }) => {
             scale: String(spring({ fps, frame, durationInFrames: 10 })),
           } }
         >
-          { title }{ ' ' }
+          { " " }{ title }{ ' ' }
         </span>
         <span
           style={ {
             display: 'inline-block',
+            fontSize: 150,
+            alignSelf: 'center',
             scale: String(spring({ fps, frame, durationInFrames: 10, delay: 5 })),
           } }
         >
-          .
+          { ' ' } DISCOVER
         </span>
       </div>
     </AbsoluteFill>

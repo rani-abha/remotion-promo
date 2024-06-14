@@ -3,7 +3,7 @@ import { slide } from '@remotion/transitions/slide'
 import { wheelspin } from './presentations/wheelspin'
 import { NaNa1 } from './NaNa1'
 import { BlueNa } from './BlueNa'
-import { TextMask } from './TextMsk'
+import { TextMask } from './TextMask'
 import { Heygle } from './Heygle'
 import { IDontWannaWork } from './IDontWannaWork'
 import React from 'react'
@@ -32,7 +32,7 @@ export const MainSequence = () => {
       />
       <TransitionSeries.Sequence durationInFrames={ 25 }>
         <Tile>
-          <NaNa1 title='RENT' />
+          <NaNa1 title='BROWSE' />
         </Tile>
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
@@ -58,7 +58,17 @@ export const MainSequence = () => {
         timing={ springTiming({ config: { damping: 200 }, durationInFrames: 10 }) }
         presentation={ slide({ direction: 'from-top' }) }
       />
-      <TransitionSeries.Sequence durationInFrames={ 90 }>
+      <TransitionSeries.Sequence durationInFrames={ 80 }>
+        <Tile>
+          <TextMask />
+        </Tile>
+      </TransitionSeries.Sequence>
+
+      <TransitionSeries.Transition
+        timing={ springTiming({ config: { damping: 200 }, durationInFrames: 10 }) }
+        presentation={ slide({ direction: 'from-top' }) }
+      />
+      <TransitionSeries.Sequence durationInFrames={ 160 }>
         {/* <Tile> */ }
         {/* <TextMask /> */ }
         <Heygle />
