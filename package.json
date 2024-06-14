@@ -6,6 +6,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@remotion/cli": "4.0.172",
+    "@remotion/google-fonts": "^4.0.172",
+    "@remotion/transitions": "^4.0.172",
     "@remotion/zod-types": "4.0.172",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -22,7 +24,7 @@
   },
   "scripts": {
     "start": "remotion studio",
-    "build": "remotion render HelloWorld out/video.mp4",
+    "build": "remotion render MainSequence out/video.mp4",
     "upgrade": "remotion upgrade",
     "test": "eslint src --ext ts,tsx,js,jsx && tsc"
   },
