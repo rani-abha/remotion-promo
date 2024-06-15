@@ -11,7 +11,7 @@ export const BlueNa: React.FC = () => {
         justifyContent: 'center',
         alignItems: 'center',
         fontFamily,
-        fontSize: 300,
+        fontSize: 250,
         color: 'white',
         backgroundColor: BLUE,
         fontWeight: 'bolder',

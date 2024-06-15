@@ -30,7 +30,7 @@ export const MainSequence = () => {
         timing={ springTiming({ config: { damping: 200 }, durationInFrames: 6 }) }
         presentation={ wheelspin({ anchor: 'left' }) }
       />
-      <TransitionSeries.Sequence durationInFrames={ 25 }>
+      <TransitionSeries.Sequence durationInFrames={ 35 }>
         <Tile>
           <NaNa1 title='BROWSE' />
         </Tile>
